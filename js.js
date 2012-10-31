@@ -68,15 +68,7 @@ $(document).ready(function(){
 				aineet[inputId] = true;
 				$("#jakaja").text(parseInt($("#jakaja").text())+1);
 			}
-			
-			if($(this).val() == 0 || $(this).val() == '')
-			{	
-				if(aineet[inputId] !== undefined){
-					aineet[inputId] = undefined;
-					$("#jakaja").text(parseInt($("#jakaja").text())-1);
-				}
-			}
-			
+						
 			if(inputClass.slice(0,12) == 'input painot'){
 				$(".tdinput2." +inputClass.slice(6,13)).text(inputValue);
 			}
@@ -190,11 +182,22 @@ $(document).ready(function(){
 				p2 = 8;
 			}
 			pisteetYhteensa();
-		}else if(inputValue == ''){
-			$(this).css("color","black");
-		}else{
-			$(this).val("0");
-			$(this).css("color","red");
+		}else {
+			
+			if($(this).val() == 0 || $(this).val() == '')
+			{	
+				if(aineet[inputId] !== undefined){
+					aineet[inputId] = undefined;
+					$("#jakaja").text(parseInt($("#jakaja").text())-1);
+				}
+			}
+		
+			if(inputValue == ''){
+				$(this).css("color","black");
+			}else{
+				$(this).val("0");
+				$(this).css("color","red");
+			}
 		}
 	});
 	
