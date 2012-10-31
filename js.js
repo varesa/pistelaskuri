@@ -73,7 +73,22 @@ $(document).ready(function(){
 				$(".tdinput2." +inputClass.slice(6,13)).text(inputValue);
 			}
 			
-			$(".input").each(function(){
+			
+		}else {
+			if(aineet[inputId] !== undefined){
+				aineet[inputId] = undefined;
+				$("#jakaja").text(parseInt($("#jakaja").text())-1);
+			}
+			
+			if(inputValue == ''){
+				$(this).css("color","black");
+			}else{
+				$(this).val("0");
+				$(this).css("color","red");
+			}
+		}
+		
+		$(".input").each(function(){
 				var val = $(this).val();
 				
 				if(val != ''){
@@ -115,8 +130,7 @@ $(document).ready(function(){
 			$("#table2").find("tr").css("background-color","white");
 			$("#table4").find("tr").css("background-color","white");
 			p1 = 0;
-			p2 = 0;
-			
+			p2 = 0;	
 			
 			if(ka >= 5.50 && ka <= 5.75){
 				$("#ka1").css("background-color",hoverColor1);
@@ -182,19 +196,7 @@ $(document).ready(function(){
 				p2 = 8;
 			}
 			pisteetYhteensa();
-		}else {
-			if(aineet[inputId] !== undefined){
-				aineet[inputId] = undefined;
-				$("#jakaja").text(parseInt($("#jakaja").text())-1);
-			}
-			
-			if(inputValue == ''){
-				$(this).css("color","black");
-			}else{
-				$(this).val("0");
-				$(this).css("color","red");
-			}
-		}
+		
 	});
 	
 	$('input[name=tk]').change(function(){pisteetYhteensa();});
