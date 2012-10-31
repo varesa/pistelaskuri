@@ -183,15 +183,11 @@ $(document).ready(function(){
 			}
 			pisteetYhteensa();
 		}else {
-			
-			if($(this).val() == 0 || $(this).val() == '')
-			{	
-				if(aineet[inputId] !== undefined){
-					aineet[inputId] = undefined;
-					$("#jakaja").text(parseInt($("#jakaja").text())-1);
-				}
+			if(aineet[inputId] !== undefined){
+				aineet[inputId] = undefined;
+				$("#jakaja").text(parseInt($("#jakaja").text())-1);
 			}
-		
+			
 			if(inputValue == ''){
 				$(this).css("color","black");
 			}else{
