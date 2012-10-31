@@ -1,0 +1,214 @@
+body
+{
+	font:normal 11px/16px Verdana,Arial,sans-serif;
+}
+
+table,td,th
+{
+	border:1px solid black;
+}
+
+/*
+background-color:rgb(85,133,215);
+background-color:rgb(163,177,193);
+background-color:rgb(157,207,239);
+background-color:rgb(200,227,246);
+background-color:rgb(228,242,251);
+background-color:rgb(243,249,253);
+*/
+
+#wrap
+{
+	/*border: 1px solid black;*/
+	width:580px;
+	height:1800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#sivu2
+{
+	display:none;
+}
+
+#s1
+{
+	position:relative;
+	float:left;
+	margin-top:250px;
+}
+
+#s2
+{
+	position:relative;
+	margin-left:230px;
+	margin-top:30px;
+}
+
+#paaOtsikko
+{
+	text-align:center;
+	margin-bottom: 30px;
+}
+
+#help-img
+{
+	position:absolute;
+	margin-left: 5px;
+	margin-top:-4px;
+}
+
+#help
+{
+	display:none;
+	padding: 2px 20px;
+	background-color:rgb(200,227,246);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+#taulukko1
+{
+	float:left;
+	width:280px;
+}
+
+.tableheader
+{
+	background-color:rgb(157,207,239);
+	text-align:left;
+	padding:3px;
+}
+
+.sbheader
+{
+	background-color:rgb(200,227,246);
+}
+
+.tdka
+{
+	background-color:rgb(157,207,239);
+}
+
+.tdlabel
+{
+	padding:1px 2px;
+	width:70%;
+}
+
+.tdinput
+{
+	text-align:center;
+	padding: 0;
+}
+
+.input
+{
+	border:0;
+	width:95%;
+	text-align:center;
+}
+
+#arrow1
+{
+	float:left;
+	margin:50px 56px;
+}
+
+#taulukko2
+{
+	float:left;
+	text-align: left;
+	width:150px;
+}
+
+#taulukko3
+{
+	float:left;
+	clear:both;
+}
+
+#table3
+{
+	width:220px;
+}
+
+.tdlabel2
+{
+	padding:1px 2px;
+	width:70%;
+}
+
+.tdinput2
+{
+	text-align:center;
+	padding: 0;
+}
+
+.input2
+{
+	border:0;
+	width:95%;
+	text-align:center;
+}
+
+#arrow2
+{
+	float:left;
+	margin:0px 10px;
+	margin-top:70px;
+}
+
+#taulukko4
+{
+	float:left;
+	text-align: left;
+	width:150px;
+}
+
+#taulukko5
+{
+	float:right;
+}
+
+#taulukko6
+{
+	clear:both;
+	margin-top:50px;
+	float:left;
+}
+
+#table6
+{
+	width:580px;
+}
+
+.checkboxi
+{
+	text-align:center;
+}
+
+.t6input
+{
+	border:0;
+	width:100%;
+}
+
+.t6td
+{
+	padding: 1px 2px;
+}
+
+.input3
+{
+	text-align:center;
+}
+
+#pyht1,#pyht2,#pyht3,#pyht4,#pyht5
+{
+	background-color:rgb(228,242,251);
+	text-align:center;
+	font-weight: bold;
+}

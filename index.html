@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi" >
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Pistelaskuri</title>
+		<script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script>
+		<script type="text/javascript" src="js.js"></script>
+		<link rel="stylesheet" type="text/css" href="css.css" />
+		
+</head>
+<body>
+<div id="wrap">
+	<h1 id="paaOtsikko">Pistelaskuri<img id="help-img" src="help-img.png" alt="help-img.png" /></h1>
+	<div id="help">
+		<h3>Ohjeistus pistelaskurin käyttöön</h3>
+		<p>
+			Pistelaskurilla voit laskea, kuinka paljon voisit saada pisteitä yhteishakuun. Muista verratessasi omaa tulostasi viime vuoden pisterajoihin, että pisterajat voivat vaihdella vuosittain.
+			Huomioi se, että 3 lisäpistettä saat, jos hakuvuotena saat peruskoulun päättötodistuksen tai jos olet suorittanut ammatilliseen perustutkintoon johtavan valmentavan koulutuksen
+			Niissä perustutkinnoissa, joissa sisäänpääsyn ratkaisee pääsykoe ei saamillasi lähtöpisteillä ole lopullisessa valinnassa merkitystä. Lähtöpisteet kuitenkin vaikuttavat siihen, pääsetkö pääsykokeeseen.
+			<br /><br /><b>Kysy tarvittaessa lisätietoja Koulutuskeskus Salpauksen opinto-ohjaajilta, joiden yhteystiedot löydät <a target="_blank" href="http://www.salpaus.fi/opiskelijat/opiskinfo/neuvot/opot.html">täältä</a>.</b>
+		</p>
+	</div>
+	<div id="sivu1">
+		<div id="taulukko1">
+			<table id="table1" cellspacing="1" border="0">
+				<tr> <th colspan="2" class="tableheader">Merkitse kaikkien aineiden numero.<br />Tabia painamalla pääset seuraavaan.<br />Katso pisteesi viereisestä taulukosta!</th> </tr>
+				<tr> <th class="sbheader">Aine:</th> <th class="sbheader">Nro:</th> </tr>
+				<tr> <td class="tdlabel">Äidinkieli</td> <td class="tdinput"><input type="text" maxlength="2" id="aine1" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">A1-kieli(en/sa)</td> <td class="tdinput"><input type="text" maxlength="2" id="aine2" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">A2-kieli(vapaaeht. ala-aste)</td> <td class="tdinput"><input type="text" maxlength="2" id="aine3" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">B1-kieli(ru)</td> <td class="tdinput"><input type="text" maxlength="2" id="aine4" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">B2-kieli(valinnainen ya)</td> <td class="tdinput"><input type="text" maxlength="2" id="aine5" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Uskonto/ET</td> <td class="tdinput"><input type="text" maxlength="2" id="aine6" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Historia</td> <td class="tdinput"><input type="text" maxlength="2" id="aine7" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Yhteiskuntaoppi</td> <td class="tdinput"><input type="text" maxlength="2" id="aine8" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Matematiikka</td> <td class="tdinput"><input type="text" maxlength="2" id="aine9" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Kemia</td> <td class="tdinput"><input type="text" maxlength="2" id="aine10" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Fysiikka</td> <td class="tdinput"><input type="text" maxlength="2" id="aine11" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Biologia</td> <td class="tdinput"><input type="text" maxlength="2" id="aine12" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Maantieto</td> <td class="tdinput"><input type="text" maxlength="2" id="aine13" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel">Terveystieto</td> <td class="tdinput"><input type="text" maxlength="2" id="aine14" class="input" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel taide">Musiikki*</td> <td class="tdinput"><input type="text" maxlength="2" id="aine15" class="input painot1" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel taide">Kuvataide*</td> <td class="tdinput"><input type="text" maxlength="2" id="aine16" class="input painot2" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel taide">Kotitalous*</td> <td class="tdinput"><input type="text" maxlength="2" id="aine17" class="input painot3" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel taide">Käsityö*</td> <td class="tdinput"><input type="text" maxlength="2" id="aine18" class="input painot4" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel taide">Liikunta*</td> <td class="tdinput"><input type="text" maxlength="2" id="aine19" class="input painot5" maxlength="5" /></td> </tr>
+				<tr> <td class="tdlabel sbheader">Yhteensä:</td> <td class="tdinput sbheader"  id="yhteensa">0</td> </tr>
+				<tr> <td class="tdlabel sbheader">Jakaja:(aineiden lukumäärä)</td> <td class="tdinput sbheader" id="jakaja">0</td> </tr>
+				<tr> <td class="tdlabel tdka">Keskiarvo:</td> <td class="tdinput tdka"  id="keskiarvo">0,00</td> </tr>
+			</table>
+		</div><!-- taulukko1 end -->
+		
+		<img src="arrow.png" alt="arrow.png" id="arrow1" />
+			
+		<div id="taulukko2">
+			<table id="table2" cellspacing="1" border="0">
+				<tr> <th class="tableheader">Kaikkien aineiden ka.</th> <th class="tableheader">Pisteitä</th> </tr>
+				<tr id="ka1"> <td>5,50-5,74</td> <td>4</td> </tr>
+				<tr id="ka2"> <td>5,75-5,99</td> <td>5</td> </tr>
+				<tr id="ka3"> <td>6,00-6,24</td> <td>6</td> </tr>
+				<tr id="ka4"> <td>6,25-6,49</td> <td>7</td> </tr>
+				<tr id="ka5"> <td>6,50-6,74</td> <td>8</td> </tr>
+				<tr id="ka6"> <td>6,75-6,99</td> <td>9</td> </tr>
+				<tr id="ka7"> <td>7,00-7,24</td> <td>10</td> </tr>
+				<tr id="ka8"> <td>7,25-7,49</td> <td>11</td> </tr>
+				<tr id="ka9"> <td>7,50-7,74</td> <td>12</td> </tr>
+				<tr id="ka10"> <td>7,75-7,99</td> <td>13</td> </tr>
+				<tr id="ka11"> <td>8,00-8,24</td> <td>14</td> </tr>
+				<tr id="ka12"> <td>8,25-8,49</td> <td>15</td> </tr>
+				<tr id="ka13"> <td>8,50-</td> <td>16</td> </tr>
+			</table>
+		</div><!-- taulukko2 end -->
+		
+		<button id="s1">Seuraava sivu</button>
+		
+	</div><!-- sivu1 end -->
+	
+	<div id="sivu2">
+		<div id="taulukko3" >
+			<table id="table3" cellspacing="1" border="0">
+				<tr> <th colspan="2" class="tableheader">Painotettavista aineista<br />lasketaan <u>3 parhaan</u> aineen ka.</th> </tr>
+				<tr> <th class="sbheader">Aine:</th> <th class="sbheader">Nro:</th> </tr>
+				<tr> <td class="tdlabel2">Musiikki*</td> <td class="tdinput2 painot1"></td> </tr>
+				<tr> <td class="tdlabel2">Kuvataidet*</td> <td class="tdinput2 painot2"></td> </tr>
+				<tr> <td class="tdlabel2">Kotitalous*</td> <td class="tdinput2 painot3"></td> </tr>
+				<tr> <td class="tdlabel2">Käsityö*</td> <td class="tdinput2 painot4"></td> </tr>
+				<tr> <td class="tdlabel2">Liikunta*</td> <td class="tdinput2 painot5"></td> </tr>
+				<tr> <td class="tdlabel2 sbheader">Yhteensä:</td> <td class="tdinput2 sbheader"  id="yhteensa2">0</td> </tr>
+				<tr> <td class="tdlabel2 tdka">Keskiarvo:</td> <td class="tdinput2 tdka"  id="keskiarvo2">0,00</td> </tr>
+			</table>
+		</div><!-- taulukko3 end -->
+		
+		<img src="arrow.png" alt="arrow.png" id="arrow2" />
+		
+		<div id="taulukko4">
+			<table id="table4" cellspacing="1" border="0">
+				<tr> <th class="tableheader">Painot. aineiden ka.</th> <th class="tableheader">Pisteitä</th> </tr>
+				<tr id="pka1"> <td>5,50-5,99</td> <td>2</td> </tr>
+				<tr id="pka2"> <td>6,00-6,49</td> <td>3</td> </tr>
+				<tr id="pka3"> <td>6,50-6,99</td> <td>4</td> </tr>
+				<tr id="pka4"> <td>7,00-7,49</td> <td>5</td> </tr>
+				<tr id="pka5"> <td>7,50-7,99</td> <td>6</td> </tr>
+				<tr id="pka6"> <td>8,00-8,49</td> <td>7</td> </tr>
+				<tr id="pka7"> <td>8,50-</td> <td>8</td> </tr>
+			</table>
+		</div><!-- taulukko4 end -->
+		
+		<div id="taulukko5">
+			<form id="tyokokemus">
+				<table id="table5" cellspacing="1" border="0">
+					<tr> <th class="tableheader" colspan="2">Työkokemus<br />Valitse seuraavista.</th> </tr>
+					<tr> <td>0 kk - 3 kk</td> <td style="text-align:center;">(+0p)<input type="radio" name="tk" value="0"/></td> </tr>
+					<tr> <td>3 kk - 6 kk</td> <td style="text-align:center;">(+1p)<input type="radio" name="tk" value="1"/></td> </tr>
+					<tr> <td>6 kk - 12 kk</td> <td style="text-align:center;">(+2p)<input type="radio" name="tk" value="2"/></td> </tr>
+					<tr> <td>12 kk - 18 kk</td> <td style="text-align:center;">(+3p)<input type="radio" name="tk" value="3"/></td> </tr>
+					<tr> <td>18 kk - 24 kk</td> <td style="text-align:center;">(+4p)<input type="radio" name="tk" value="4"/></td> </tr>
+					<tr> <td>24 kk - </td> <td style="text-align:center;">(+5p)<input type="radio" name="tk" value="5"/></td> </tr>
+				</table>
+			</form>
+		</div><!-- taulukko5 end -->
+		
+		<div id="taulukko6">
+			<form id="pisteet">
+				<table id="table6" cellspacing="1" border="0">
+					<tr> <th class="tableheader">Hakutoive</th> <th class="tableheader">Peruskoulun<br />suorittaminen<br />hakuvuonna (+3p)</th> <th class="tableheader">Sukupuoli-<br />pisteet (+2p)</th> <th class="tableheader">Pääsy- tai<br />soveltuvuuskoe<br />pisteet (+ 0-10p)</th> <th class="tableheader">PISTEET<br />YHTEENSÄ</th> </tr>
+					<tr> <td class="t6td">1. Hakutoive (+3p)</td> <td rowspan="5"  class="checkboxi t6td"><input id="psh" type="checkbox" /></td> <td class="checkboxi t6td"><input id="sukup1" type="checkbox" /></td> <td class="t6td"><input id="pkp1" type="text" class="input3 t6input" maxlength="2" /></td> <td class="t6td" id="pyht1"></td> </tr>
+					<tr> <td class="t6td">2. Hakutoive (+1p)</td> <td class="checkboxi t6td"><input id="sukup2" type="checkbox" /></td> <td class="t6td"><input id="pkp2" type="text" class="input3 t6input" maxlength="2" /></td> <td class="t6td" id="pyht2"></td> </tr>
+					<tr> <td class="t6td">3. Hakutoive (+0p)</td> <td class="checkboxi t6td"><input id="sukup3" type="checkbox" /></td> <td class="t6td"><input id="pkp3" type="text" class="input3 t6input" maxlength="2" /></td> <td class="t6td" id="pyht3"></td> </tr>
+					<tr> <td class="t6td">4. Hakutoive (+0p)</td> <td class="checkboxi t6td"><input id="sukup4" type="checkbox" /></td> <td class="t6td"><input id="pkp4" type="text" class="input3 t6input" maxlength="2" /></td> <td class="t6td" id="pyht4"></td> </tr>
+					<tr> <td class="t6td">5. Hakutoive (+0p)</td> <td class="checkboxi t6td"><input id="sukup5" type="checkbox" /></td> <td class="t6td"><input id="pkp5" type="text" class="input3 t6input" maxlength="2" /></td> <td class="t6td" id="pyht5"></td> </tr>
+				</table>
+			</form>
+		</div><!-- taulukko6 end -->
+		
+		<button id="s2">Edellinen sivu</button>
+		
+	</div><!-- sivu2 end -->
+</div><!-- wrap end -->
+</body>
+</html>
