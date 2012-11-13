@@ -4,6 +4,10 @@ var hoverColor1 = "rgb(228,242,251)";
 
 $(document).ready(function(){
 
+	//
+	// Initialize
+	//
+
 	$("#help-img").click(function(){
 		$("#help").toggle("blind", 500);
 	});
@@ -56,6 +60,10 @@ $(document).ready(function(){
 		}
 	}
 	
+	//
+	// Clicked on a field handler
+	//
+	
 	$(".input").focusout(function(){
 		ka = 0;
 		ka2 = 0;
@@ -88,6 +96,10 @@ $(document).ready(function(){
 			}
 		}
 		
+		//
+		// Calculate the average
+		//
+		
 		$(".input").each(function(){
 				var val = $(this).val();
 				
@@ -108,6 +120,10 @@ $(document).ready(function(){
 				if(painotetut[i] > 0)
 				ka2 += parseInt(painotetut[i]);
 			}
+			
+			//
+			// Print the results
+			//
 			
 			if(ka2 != 0){
 				$("#yhteensa2").text(ka2);
@@ -130,7 +146,7 @@ $(document).ready(function(){
 			$("#table2").find("tr").css("background-color","white");
 			$("#table4").find("tr").css("background-color","white");
 			p1 = 0;
-			p2 = 0;	
+			p2 = 0;
 			
 			if(ka >= 5.50 && ka <= 5.75){
 				$("#ka1").css("background-color",hoverColor1);
@@ -204,6 +220,10 @@ $(document).ready(function(){
 	$('.input3').change(function(){pisteetYhteensa();});
 
 });
+
+//
+// Print final results on second page
+//
 
 function pisteetYhteensa(){
 	var pisteet = parseInt(p1 + p2);
