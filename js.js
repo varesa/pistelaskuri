@@ -64,7 +64,7 @@ $(document).ready(function(){
 		var inputValue = $(this).val();
 		if(inputValue > 3 && inputValue < 11){
 			$(this).css("color","black");
-			if(aineet[inputId] === undefined && $(this).val() != ''){
+			if(aineet[inputId] === undefined){
 				aineet[inputId] = true;
 				$("#jakaja").text(parseInt($("#jakaja").text())+1);
 			}
