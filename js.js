@@ -26,6 +26,11 @@ $(document).ready(function(){
 	p2 = 0;
 	$(".input").each(function(){
 		$(this).val("");
+		id = $(this).attr("id");
+		num = id.substr(id.length-2, 2);
+		if( 14 < num && num < 20 ) {
+		    aineet[id] = [];
+		}
 	});
 	
 	$(".input2").each(function(){
