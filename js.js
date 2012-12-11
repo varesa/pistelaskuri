@@ -24,13 +24,9 @@ $(document).ready(function(){
 
 	p1 = 0;
 	p2 = 0;
+	
 	$(".input").each(function(){
 		$(this).val("");
-		id = $(this).attr("id");
-		num = id.substr(id.length-2, 2);
-		if( 14 < num && num < 20 ) {
-		    aineet[id] = [];
-		}
 	});
 	
 	$(".input2").each(function(){
@@ -69,37 +65,144 @@ $(document).ready(function(){
 	// Clicked on a field handler
 	//
 	
-	$(".input").focusout(function(){
+	//$(".input").focusout(function(){
+	$("#table1").on("focusout", ".input", function(event) {
+		//console.log($(this));
+		//console.log($(event.target));
 		ka = 0;
 		ka2 = 0;
 		var inputId = $(this).attr("id");
 		var inputClass = $(this).attr("class");
 		var inputValue = $(this).val();
-		if(inputValue > 3 && inputValue < 11){
-			$(this).css("color","black");
-			if(aineet[inputId] === undefined){
-				aineet[inputId] = true;
-				$("#jakaja").text(parseInt($("#jakaja").text())+1);
-			}
+		
+		if(inputId.slice(inputId.length - 2, inputId.length -1 ) == "_") {
+			//console.log("We have a special field");
+			
+			var prefix = inputId.slice(0, inputId.length -1 );
+			var fieldnum = +inputId.slice(inputId.length - 1, inputId.length);
+			
+			if( inputValue > 3 && inputValue < 11 ) {
+				if( aineet[inputId] === undefined  ){
+					aineet[inputId] = true;
+					$("#jakaja").text(parseInt($("#jakaja").text())+1);
+					
+					var table = $('#table1')[0];
+					var rowNum = $(this).parent().parent()[0].sectionRowIndex;
+					var fieldnumNext = fieldnum + 1;
+					
+					var oldRow = table.rows[rowNum];
+					
+					var c1old = oldRow.cells[0];
+					var c2old = oldRow.cells[1];
+					
+					var newRow = table.insertRow(rowNum+1);
+					
+					var c1 = newRow.insertCell(0);
+					
+					var oldlabel = $("#" + prefix + 1).parents("tr")[0].cells[0].textContent;
+					c1.textContent = oldlabel.slice(0, oldlabel.length - 1) + ", " + fieldnumNext + ". numero";
+					
+					var c2 = newRow.insertCell(1);
+					var inputField = document.createElement("input");
+					inputField.setAttribute("id", prefix + fieldnumNext);
+					inputField.setAttribute("type", "test");
+					inputField.setAttribute("class", c2old.firstChild.getAttribute("class"));
+					inputField.setAttribute("maxlength", "3");
+					
+					//$("#" + inputField.getAttribute("id")).focusout();
+					
+					c2.appendChild(inputField);
+				}
+					
+			} else {
+				if(aineet[inputId] !== undefined){
+					aineet[inputId] = undefined;
+					$("#jakaja").text(parseInt($("#jakaja").text())-1);
+				}
+
+				
+				if(inputValue == ''){
+					$(this).css("color","black");
+					
+					var x = 0;
+					while( $("#" + prefix + (fieldnum+x+1)).length > 0) {
+						x++;
+					}
+					
+					if(x > 0) {
+						var table = $('#table1')[0];
+						var rowNum = $(this).parent().parent()[0].sectionRowIndex;
 						
-			if(inputClass.slice(0,12) == 'input painot'){
-				$(".tdinput2." +inputClass.slice(6,13)).text(inputValue);
+						for(var i = rowNum+1; i < rowNum+x+1; i++) {
+							var row = table.rows[i];
+							console.log(row);
+							var num = +row.cells[1].firstChild.getAttribute("id").slice(prefix.length, prefix.length+1)-1;
+							
+							//var oldlabel = table.rows[rowNum].textContent;
+							//console.log("Start:");
+							//console.log($("#" + prefix + "1"));
+							//console.log($("#" + prefix + "1").parent);
+							//console.log($("#" + prefix + "1").parent.parent[0]);
+							//console.log($("#" + prefix + "1").parent.parent[0].cells[0]);
+							//console.log($("#" + prefix + "1").parent.parent[0].cells[0].textContent);
+							var oldlabel = $("#" + prefix + "1").parent().parent()[0].cells[0].textContent;
+							
+							if(num == 1) {
+								row.cells[0].textContent = oldlabel
+							} else {
+								row.cells[0].textContent = oldlabel.slice(0, oldlabel.length - 1) + ", " + num + ". numero";
+							}
+							
+							$(row.cells[1].firstChild)[0].setAttribute("id", prefix + num);
+							
+							//console.log(num);
+							//row.cells[0].textContent = parseInt(row.cells[0].textContent.slice(prefix.length, prefix.length+1)-1);
+							//console.log(row);
+						}
+						table.deleteRow(rowNum);
+					}
+					
+				}else{
+					$(this).val("0");
+					$(this).css("color","red");
+				}
+			}
+				
+			if(aineet[inputId] === undefined){
+					
 			}
 			
-			
-		}else {
-			if(aineet[inputId] !== undefined){
-				aineet[inputId] = undefined;
-				$("#jakaja").text(parseInt($("#jakaja").text())-1);
-			}
-			
-			if(inputValue == ''){
+		
+		} else {
+			if(inputValue > 3 && inputValue < 11){
 				$(this).css("color","black");
-			}else{
-				$(this).val("0");
-				$(this).css("color","red");
+				
+				if(aineet[inputId] === undefined){
+					aineet[inputId] = true;
+					$("#jakaja").text(parseInt($("#jakaja").text())+1);
+				}
+				
+				if(inputClass.slice(0,12) == 'input painot'){
+					$(".tdinput2." +inputClass.slice(6,13)).text(inputValue);
+				}
+			
+			
+			}else {
+				if(aineet[inputId] !== undefined){
+					aineet[inputId] = undefined;
+					$("#jakaja").text(parseInt($("#jakaja").text())-1);
+				}
+
+				
+				if(inputValue == ''){
+					$(this).css("color","black");
+				}else{
+					$(this).val("0");
+					$(this).css("color","red");
+				}
 			}
 		}
+		
 		
 		//
 		// Calculate the average
