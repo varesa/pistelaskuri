@@ -65,10 +65,7 @@ $(document).ready(function(){
 	// Clicked on a field handler
 	//
 	
-	//$(".input").focusout(function(){
 	$("#table1").on("focusout", ".input", function(event) {
-		//console.log($(this));
-		//console.log($(event.target));
 		ka = 0;
 		ka2 = 0;
 		var inputId = $(this).attr("id");
@@ -76,7 +73,6 @@ $(document).ready(function(){
 		var inputValue = $(this).val();
 		
 		if(inputId.slice(inputId.length - 2, inputId.length -1 ) == "_") {
-			//console.log("We have a special field");
 			
 			var prefix = inputId.slice(0, inputId.length -1 );
 			var fieldnum = +inputId.slice(inputId.length - 1, inputId.length);
@@ -105,20 +101,18 @@ $(document).ready(function(){
 					var c2 = newRow.insertCell(1);
 					var inputField = document.createElement("input");
 					inputField.setAttribute("id", prefix + fieldnumNext);
-					inputField.setAttribute("type", "test");
+					inputField.setAttribute("type", "text");
 					inputField.setAttribute("class", c2old.firstChild.getAttribute("class"));
 					inputField.setAttribute("maxlength", "3");
-					
-					//$("#" + inputField.getAttribute("id")).focusout();
 					
 					c2.appendChild(inputField);
 				}
 					
 			} else {
-				if(aineet[inputId] !== undefined){
-					aineet[inputId] = undefined;
-					$("#jakaja").text(parseInt($("#jakaja").text())-1);
-				}
+				//if(aineet[inputId] !== undefined){
+				//	aineet[inputId] = undefined;
+				//	$("#jakaja").text(parseInt($("#jakaja").text())-1);
+				//}
 
 				
 				if(inputValue == ''){
@@ -133,18 +127,12 @@ $(document).ready(function(){
 						var table = $('#table1')[0];
 						var rowNum = $(this).parent().parent()[0].sectionRowIndex;
 						
+						var num;
+						
 						for(var i = rowNum+1; i < rowNum+x+1; i++) {
 							var row = table.rows[i];
-							console.log(row);
-							var num = +row.cells[1].firstChild.getAttribute("id").slice(prefix.length, prefix.length+1)-1;
+							num = +row.cells[1].firstChild.getAttribute("id").slice(prefix.length, prefix.length+1)-1;
 							
-							//var oldlabel = table.rows[rowNum].textContent;
-							//console.log("Start:");
-							//console.log($("#" + prefix + "1"));
-							//console.log($("#" + prefix + "1").parent);
-							//console.log($("#" + prefix + "1").parent.parent[0]);
-							//console.log($("#" + prefix + "1").parent.parent[0].cells[0]);
-							//console.log($("#" + prefix + "1").parent.parent[0].cells[0].textContent);
 							var oldlabel = $("#" + prefix + "1").parent().parent()[0].cells[0].textContent;
 							
 							if(num == 1) {
@@ -154,24 +142,27 @@ $(document).ready(function(){
 							}
 							
 							$(row.cells[1].firstChild)[0].setAttribute("id", prefix + num);
-							
-							//console.log(num);
-							//row.cells[0].textContent = parseInt(row.cells[0].textContent.slice(prefix.length, prefix.length+1)-1);
-							//console.log(row);
 						}
+						
+					if(aineet[prefix  + num] !== undefined){
+						aineet[prefix  + num] = undefined;
+						$("#jakaja").text(parseInt($("#jakaja").text())-1);
+					}
+						
+						
 						table.deleteRow(rowNum);
 					}
 					
 				}else{
 					$(this).val("0");
 					$(this).css("color","red");
+					
+					if(aineet[inputId] !== undefined){
+						aineet[inputId] = undefined;
+						$("#jakaja").text(parseInt($("#jakaja").text())-1);
+					}
 				}
 			}
-				
-			if(aineet[inputId] === undefined){
-					
-			}
-			
 		
 		} else {
 			if(inputValue > 3 && inputValue < 11){
@@ -193,7 +184,6 @@ $(document).ready(function(){
 					$("#jakaja").text(parseInt($("#jakaja").text())-1);
 				}
 
-				
 				if(inputValue == ''){
 					$(this).css("color","black");
 				}else{
@@ -357,7 +347,6 @@ function pisteetYhteensa(){
 		$("#pyht"+i).html(parseInt(pisteet + pp));
 	}
 }
-
 
 function sortNumber(a, b){
 	return b - a;
