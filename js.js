@@ -103,17 +103,12 @@ $(document).ready(function(){
 					inputField.setAttribute("id", prefix + fieldnumNext);
 					inputField.setAttribute("type", "text");
 					inputField.setAttribute("class", c2old.firstChild.getAttribute("class"));
-					inputField.setAttribute("maxlength", "3");
+					inputField.setAttribute("maxlength", "2");
 					
 					c2.appendChild(inputField);
 				}
 					
 			} else {
-				//if(aineet[inputId] !== undefined){
-				//	aineet[inputId] = undefined;
-				//	$("#jakaja").text(parseInt($("#jakaja").text())-1);
-				//}
-
 				
 				if(inputValue == ''){
 					$(this).css("color","black");
