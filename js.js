@@ -142,9 +142,7 @@ $(document).ready(function(){
 					if(aineet[prefix  + num] !== undefined){
 						aineet[prefix  + num] = undefined;
 						$("#jakaja").text(parseInt($("#jakaja").text())-1);
-					}
-						
-						
+					}	
 						table.deleteRow(rowNum);
 					}
 					
@@ -158,6 +156,23 @@ $(document).ready(function(){
 					}
 				}
 			}
+			
+			//////////
+			/////  orptjhprtohjrtophjpohrthjrtpohjtrpohj
+			///////////
+			var sum = 0;
+			var count = 0;
+			$(".input").each(function() {
+				if($(this).attr('class').slice(0,12) == 'input painot' && $(this).attr("id").slice(0, inputId.length -1 ) == prefix) {
+					var val = parseInt($(this).val())
+					if(val > 0) {
+						sum += parseInt(val);
+						count++;
+					}
+				}
+			});
+			var kap = sum/count;
+			$(".tdinput2." +inputClass.slice(6,13)).text(Math.round(parseFloat(kap)*100)/100);
 		
 		} else {
 			if(inputValue > 3 && inputValue < 11){
@@ -168,9 +183,9 @@ $(document).ready(function(){
 					$("#jakaja").text(parseInt($("#jakaja").text())+1);
 				}
 				
-				if(inputClass.slice(0,12) == 'input painot'){
-					$(".tdinput2." +inputClass.slice(6,13)).text(inputValue);
-				}
+				//if(inputClass.slice(0,12) == 'input painot'){
+				//	$(".tdinput2." +inputClass.slice(6,13)).text(inputValue);
+				//}
 			
 			
 			}else {
@@ -193,17 +208,20 @@ $(document).ready(function(){
 		// Calculate the average
 		//
 		
+		ka = 0;
+		ka2 = 0;
+		
 		$(".input").each(function(){
 				var val = $(this).val();
 				
-				if(val != ''){
+				if(parseFloat(val) > 0){
 					ka += parseInt(val);
 				}
 			});
 			
 			var painotetut = new Array();
 			$(".tdinput2:not(#yhteensa2):not(#keskiarvo2)").each(function(){
-				var val2 = parseInt($(this).text());	
+				var val2 = parseFloat($(this).text());	
 				if(val2 != '' && val2 > 0){
 					painotetut.push(val2);
 				}
@@ -211,7 +229,14 @@ $(document).ready(function(){
 			painotetut.sort(sortNumber);
 			for(var i=0; i<3; i++){
 				if(painotetut[i] > 0)
-				ka2 += parseInt(painotetut[i]);
+				ka2 += parseFloat(painotetut[i]);
+			}
+			
+			var jakaja = 1;
+			if(painotetut.length < 3) {
+				jakaja = painotetut.length;
+			} else {
+				jakaja = 3;
 			}
 			
 			//
@@ -219,8 +244,8 @@ $(document).ready(function(){
 			//
 			
 			if(ka2 != 0){
-				$("#yhteensa2").text(ka2);
-				ka2 = Math.round((ka2 / 3)*100)/100;
+				$("#yhteensa2").text(Math.round(parseFloat(ka2)*100)/100);
+				ka2 = Math.round((ka2 / jakaja)*100)/100;
 				$("#keskiarvo2").text(ka2);
 			}else{
 				$("#yhteensa2").text("0");
@@ -228,7 +253,7 @@ $(document).ready(function(){
 			}
 			
 			if(ka != 0){
-				$("#yhteensa").text(ka);
+				$("#yhteensa").text(Math.round(parseFloat(ka)*100)/100);
 				ka = Math.round((ka / parseInt($("#jakaja").text()))*100)/100;
 				$("#keskiarvo").text(ka);
 			}else{
